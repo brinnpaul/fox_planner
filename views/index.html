@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="page-map">
+          <!-- <img id="fox" src="http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20Picture%20003.jpg"> -->
+          <div id="gmaps"><script src="public/gmaps/gmaps.js"></script></div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="dropdown-hotel">
+            <select class="drop-width">
+              <option value=""> Hotel </option>
+              {% for hotel in hotels %}
+              <option value="{{hotel}}"> {{hotel}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="dropdown-restaurant">
+            <select class="drop-width" >
+              <option value=""> Restaurant </option>
+              {% for rest in restaurants %}
+              <option value="{{rest}}"> {{rest}} </option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="dropdown-activity">
+            <select class="drop-width" >
+              <option value=""> Activity </option>
+              {% for act in activities %}
+              <option value="{{act}}"> {{act}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <p>My Hotel</p>
+          <div class="my-hotel">
+          </div>
+          <p> My Restaurant </p>
+          <div class="my-restaurant">
+            <div></div>
+          </div>
+          <p>My Activities</p>
+          <div class="my-activities">
+              <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {% endblock %}
