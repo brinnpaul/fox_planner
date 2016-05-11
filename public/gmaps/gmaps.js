@@ -12,10 +12,14 @@ function initialize_gmaps() {
     // initialize a new Google Map with the options
     var map = new google.maps.Map(map_canvas_obj, mapOptions);
     // Add the marker to the map
+    var image = {
+      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Canis_lupis_track.svg/100px-Canis_lupis_track.svg.png",
+      scaledSize: new google.maps.Size(75, 85)
+    }
     var marker = new google.maps.Marker({
         position: myLatlng,
         title:"Hello World!",
-        icon: "https://openclipart.org/image/2400px/svg_to_png/212526/fox_1.png"
+        icon: image
     });
     // Add the marker to the map by calling setMap()
     // marker.setIcon('fox_clip.png');

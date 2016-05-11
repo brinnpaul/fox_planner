@@ -2,60 +2,83 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="page-map">
-          <!-- <img id="fox" src="http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20Picture%20003.jpg"> -->
-          <div id="gmaps"><script src="public/gmaps/gmaps.js"></script></div>
-        </div>
-      </div>
 
-      <div class="col-lg-4">
-        <div class="panel panel-default">
-          <div class="dropdown-hotel">
-            <select class="drop-width">
+
+    <div id="wrapper">
+
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav-stacked affix">
+          <li class="sidebar-brand">
+            <a href="#"> The Fox Says </a>
+          </li>
+          <li class="">
+            <select class="selector">
               <option value=""> Hotel </option>
               {% for hotel in hotels %}
               <option value="{{hotel}}"> {{hotel}}</option>
               {% endfor %}
             </select>
-          </div>
-
-          <div class="dropdown-restaurant">
-            <select class="drop-width" >
+            <input class="btn btn-sm btselect" type="submit">
+          </li>
+          <li>
+            <select class="selector" >
               <option value=""> Restaurant </option>
               {% for rest in restaurants %}
               <option value="{{rest}}"> {{rest}} </option>
               {% endfor %}
             </select>
-          </div>
-
-          <div class="dropdown-activity">
-            <select class="drop-width" >
+            <input class="btn btn-sm btselect" type="submit">
+          </li>
+          <li class="divide">
+            <select class="selector" >
               <option value=""> Activity </option>
               {% for act in activities %}
               <option value="{{act}}"> {{act}}</option>
               {% endfor %}
             </select>
-          </div>
-        </div>
+            <input class="btn btn-sm btselect" type="submit">
+          </li>
+          <hr>
+          <li class="sidebar-brand">
+            <a href="#"> Dog Day #{{num}} </a>
+          </li>
+          <li id="daybutton">
+            <input class="btn btn-sm" type="submit" value="1">
+            <input class="btn btn-sm" type="submit" value="2">
+            <input class="btn btn-sm" type="submit" value="3">
+            <input class="btn btn-sm" type="submit" value="4">
+            <input class="btn btn-sm" type="submit" value="5">
+          </li>
+          <li>
+            <a href="#" class="selected hotel"> My Hotel </a>
+            <input class="btn btn-sm btselect" type="submit" value="edit">
+          </li>
+          <li>
+            <a href="#" class="selected restaurant"> My Restaurant </a>
+            <input class="btn btn-sm btselect" type="submit" value="edit">
+          </li>
+          <li>
+            <a href="#" class="selected activity"> My Activity </a>
+            <input class="btn btn-sm btselect" type="submit" value="edit">
+          </li>
+        </ul>
+      </div>
 
-        <div class="panel panel-default">
-          <p>My Hotel</p>
-          <div class="my-hotel">
-          </div>
-          <p> My Restaurant </p>
-          <div class="my-restaurant">
-            <div></div>
-          </div>
-          <p>My Activities</p>
-          <div class="my-activities">
-              <div></div>
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="page-map">
+                <div id="gmaps"><script src="public/gmaps/gmaps.js"></script></div>
+              </div>
+            </div>
+            <div id="menu-toggle">
+              <input class="btn btn-sm" value="Toggle Menu">
+            </div>
           </div>
         </div>
       </div>
+
     </div>
-  </div>
 
     {% endblock %}
